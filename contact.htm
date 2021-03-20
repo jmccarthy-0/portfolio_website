@@ -1,0 +1,80 @@
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="/manifest.json">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="inc/css/styles.css">
+    <title>Joe's Thick, Juicy World</title>
+</head>
+
+<body>
+    <nav>
+        <ul class="nav-list">
+            <li>
+                <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <!-- <li>
+                <a class="nav-link" href="about.htm">About</a>
+            </li> -->
+            <li>
+                <a class="nav-link" href="work.htm">Work</a>
+            </li>
+            <li>
+                <a class="nav-link is-active" href="contact.htm">Contact</a>
+            </li>
+        </ul>
+    </nav>
+    <header>
+        <h1 class="header-content has-shadow-txt">Contact</h1>
+    </header>
+    <main style="text-align: center">
+        <ul class="contact-list">
+            <li>
+                <span id="address">mccarthysound@gmail.com</span>
+                <div class="btn-wrapper">
+                    <button id="clipBtn" class="btn">Copy Email</button>
+                    <div id="clipSuccess" class="feedback">
+                        <p>Copied!</p>
+                    </div>
+                    <div id="clipFail" class="feedback">
+                        <p>:( Something went wrong</p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <a href="https://codepen.io/jmccar" target="_blank">CodePen</a>
+            </li>
+            <li>
+                <a href="https://github.com/jmccarthy-0/" target="_blank">GitHub</a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/j.mccarthyart/" target="_blank">Instagram</a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/joe-mccarthy-58139984" target="_blank">LinkedIn</a>
+            </li>
+    </main>
+
+    <script type="text/javascript">
+        "use strict";
+        const address = document.getElementById('address').textContent;
+        const clipBtn = document.getElementById('clipBtn');
+
+        clipBtn.addEventListener('click', () => {
+             navigator.clipboard.writeText(address).then(()=>{
+                 let feedback = document.getElementById('clipSuccess');
+                 feedback.style.opacity = 1;
+                 setTimeout(() => {
+                     feedback.style.opacity = 0;
+                 }, 2500);
+             }, ()=>{
+
+             });
+        });
+    </script>
+</body>
+</html>

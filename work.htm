@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="inc/css/styles.css">
+    <title>Joe's Thick, Juicy World</title>
+
+
+</head>
+
+<body>
+    <nav>
+        <ul class="nav-list">
+            <li>
+                <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <!-- <li>
+                <a class="nav-link" href="about.htm">About</a>
+            </li> -->
+            <li>
+                <a class="nav-link is-active" href="work.htm">Work</a>
+            </li>
+            <li>
+                <a class="nav-link" href="contact.htm">Contact</a>
+            </li>
+        </ul>
+    </nav>
+    <header class="bg-deer">
+        <h1 class="header-content has-shadow-txt">Work</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Showcase</h2>
+            <ul class="gallery gallery-showcase">
+                <li>
+                    <div class="card">
+                        <div class="showcase-wrapper">
+                            <img src="img/projects/georgetown.jpg" alt="Screenshot" class="has-shadow">
+                        </div>
+                        <div class="showcase-content">
+                            <h4>Local Government</h4>
+                            <h3>Town of Georgetown</h3>
+                            <a href="https://www.georgetowndel.com/" target="blank" class="btn">Visit Live Site</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="card">
+                        <div class="showcase-wrapper">
+                            <img src="img/projects/outlet_shutters.jpg" alt="Screenshot" class="has-shadow">
+                        </div>
+                        <div class="showcase-content">
+                            <h4>Retail</h4>
+                            <h3>Outlet Shutters</h3>
+                            <a href="https://www.outletshutters.com/" target="_blank" class="btn">
+                                Visit Live Site
+                            </a>
+
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="card">
+                        <div class="showcase-wrapper">
+                            <img src="img/projects/trash_duck.jpg">
+                        </div>
+                        <div class="showcase-content">
+                            <h4>Personal, Work in Progress</h4>
+                            <h3>
+                                Trash Ducks
+                            </h3>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+        </section>
+        <section>
+            <h2>Other Projects</h2>
+            <ul class='gallery gallery-other'>
+                <li>
+                    <div class="card thumbnail">
+                        <img src="img/projects/georgetown_hist.jpg" alt="Screenshot of Georgetown Historical Society's homepage">
+                        <div class="thumbnail-content">
+                            <h4 class="txt-white">NGO</h4>
+                            <a href="https://www.georgetowndehistorical.org/" target="_blank">
+                                <h3 class="txt-white">Georgetown Historical Society</h3>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="card thumbnail">
+                        <img src="img/projects/idec.jpg" alt="Screenshot of IDEC Elevator Products' homepage">
+                        <div class="thumbnail-content">
+                            <h4 class="txt-white">Manufacturing</h4>
+                            <a href="https://www.idecelevatorproducts.com/" target="_blank">
+                                <h3 class="txt-white">IDEC Elevator Products</h3>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="card thumbnail">
+                        <img src="img/projects/lakeside.jpg" alt="Screenshot of IDEC Elevator Products' homepage">
+                        <div class="thumbnail-content">
+                            <h4 class="txt-white">Healthcare</h4>
+                            <a href="https://www.mylakesidept.com/" target="_blank">
+                                <h3 class="txt-white">Lakeside Physical Therapy</h3>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="card thumbnail">
+                        <img src="img/projects/diverse_supply.jpg" alt="Screenshot of Diverse Supply Solutions' homepage">
+                        <div class="thumbnail-content">
+                            <h4 class="txt-white">Wholesale</h4>
+                            <a href="https://www.diversesupplysolutions.net/" target="_blank">
+                                <h3 class="txt-white">Diverse Supply Solutions</h3>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="card thumbnail">
+                        <img src="img/projects/fawcasson.jpg" alt="Screenshot of Faw Casson's homepage">
+                        <div class="thumbnail-content">
+                            <h4 class="txt-white">Finance</h4>
+                            <a href="https://www.fawcasson.com/" target="_blank">
+                                <h3 class="txt-white">Faw Casson</h3>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="card thumbnail">
+                        <img src="img/projects/whayland.jpg" alt="Screenshot of Whayland's homepage">
+                        <div class="thumbnail-content">
+                            <h4 class="txt-white">Construction</h4>
+                            <a href="http://www.whayland.com/" target="_blank">
+                                <h3 class="txt-white">Whayland</h3>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+        </section>
+    </main>
+
+    <script type="text/javascript">
+        const cards = document.querySelectorAll('.gallery li');
+
+        cards.forEach(card => {
+            let link = card.querySelector('a');
+            card.addEventListener('click', e => {
+                if (link !== e.target) {
+                    link.click();
+                }
+            });
+        });
+    </script>
+
+</html>

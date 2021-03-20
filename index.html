@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <meta charset="UTF-8">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="inc/css/styles.css">
+    <title>Joe's Thick, Juicy World</title>
+</head>
+
+<body>
+    <nav>
+        <ul class="nav-list">
+            <li>
+                <a class="nav-link is-active" href="index.html">Home</a>
+            </li>
+            <!-- <li>
+                <a class="nav-link" href="about.htm">About</a>
+            </li> -->
+            <li>
+                <a class="nav-link" href="work.htm">Work</a>
+            </li>
+            <li>
+                <a class="nav-link" href="contact.htm">Contact</a>
+            </li>
+        </ul>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <h1 class="has-shadow-txt">Joe McCarthy</h1>
+            <h2 class="txt-white has-shadow-txt">Front End Developer & Web Designer</h2>
+        </div>
+    </header>
+
+    <main>
+        <div>
+            <h3></h3>
+            <form>
+                <div class="slider-wrapper">
+                    <input type="range" id="matrixSlider" class="slider" min="0" max="1" step=".1" value=".3" aria-label="Background filter alpha level">
+                </div>
+                <input type="range" id="bFreqSlider" class="slider" min=".005" max=".015" step=".001" value=".005" aria-label="Background filter base frequency">
+
+                <button type="button" id="playBtn" data-playing="true">
+                    <span class="play">&#x23F5;</span>
+                    <span class="play sr-only">play</span>
+                    <span class="pause is-hidden">&#x23F8;</span>
+                    <span class="pause sr-only is-hidden">pause</span>
+                </button>
+            </form>
+        </div>
+
+        <svg class="bg-filter">
+            <filter id="filter" style="width:100vw;margin-left:-50px">
+                <feTurbulence type="turbulence"
+                              baseFrequency="0.005"
+                              numOctaves="4"
+                              seed="1"
+                              stitchTiles="stitch"
+                              id="turb"
+                              result="turb" />
+                <!-- <feGaussianBlur in="turb"
+                                stdDeviation="1"
+                                result="blur" /> -->
+                <feColorMatrix in="turb"
+                               type="hueRotate"
+                               values="0"
+                               id="matrix"
+                               result="matrix"/>
+                <feColorMatrix in="matrix"
+                               type="matrix"
+                               values="0 0 0 0 0
+                                       0 0 0 0 0
+                                       0 0 0 0 0
+                                       .3 0 0 0 0"
+                                id="matrix02"
+                                result="matrix02"/>
+                <feDisplacementMap in="SourceGraphic"
+                                   in2="matrix02"
+                                   scale="100" />
+            </filter>
+        </svg>
+
+        <div class="tree-wrapper">
+            <picture>
+                <source srcset="img/tree_default.jpg" media="(min-width:768px)">
+                <source srcset="img/tree_mobile.jpg">
+                <img class="bg-tree" src="img/tree_default.jpg">
+            </picture>
+        </div>
+    </main>
+
+    <script src="inc/js/script.js" type="text/javascript"></script>
+</body>
+
+</html>
