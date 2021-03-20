@@ -6,7 +6,7 @@
     --gray-3: hsl(88 16% 5%);
     --green-1: hsl(134 4% 39%);
     --green-2: hsl(134 15% 36%);
-    --green-3: hsl(134 11% 23%);
+    --green-3: hsl(134 10% 30%);
 
     --brown-1: hsl(25 41% 90%);
     --brown-2: hsl(25 41% 85%);
@@ -99,6 +99,12 @@ section {
     }
 }
 
+a {
+    color: var(--green-3);
+    text-decoration: none;
+    position: relative;
+}
+
 
 /* Typography */
 h1, h2, h3 {
@@ -178,14 +184,15 @@ p, a, .btn {
     background: none;
     text-decoration: none;
     cursor: pointer;
-    color: var(--green-3);
+    color: var(--gray-2);
     border: 1px solid var(--green-2);
-    transition: background 90ms ease-out;
+    transition: background 90ms ease-out, color 90ms ease-out;
 }
 
-.btn:hover {
+.btn:hover,
+.btn:focus {
     background: var(--green-2);
-    color: #fff;
+    color: var(--brown-1);
 }
 
 .btn, .feedback {
@@ -232,20 +239,24 @@ p, a, .btn {
     color: var(--gray-1-faded);
 }
 
-.nav-link::after {
+a:not(.btn)::after {
     content: '';
     position: absolute;
     bottom:0;
     left:0;
     right: 0;
-    border-bottom: 1px solid var(--gray-1);
+    border-bottom: 1px solid var(--green-3);
     transform-origin: left;
     transform: scale3d(0,0,0);
     backface-visibility: hidden;
     transition: transform 80ms ease;
 }
 
-.nav-link:hover::after {
+.nav-link::after {
+    border-bottom: 1px solid var(--gray-1);
+}
+
+a:hover::after {
     transform: scale3d(1,1,1);
 }
 
@@ -536,6 +547,10 @@ h4 {
 }
 .thumbnail:hover img {
     filter: blur(0px);
+}
+
+.thumbnail-link::after {
+    content: none !important;
 }
 
 .gallery img {
