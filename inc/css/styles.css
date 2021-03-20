@@ -186,13 +186,36 @@ p, a, .btn {
     cursor: pointer;
     color: var(--gray-2);
     border: 1px solid var(--green-2);
-    transition: background 90ms ease-out, color 90ms ease-out;
+    transform: scale3d(1,1,1);
+    transition: background 90ms ease-out, color 90ms ease-out, transform 50ms ease-out;
 }
 
 .btn:hover,
 .btn:focus {
     background: var(--green-2);
     color: var(--brown-1);
+}
+
+.btn:active {
+    transform: scale3d(.9,.9,1);
+}
+
+
+.btn.filter {
+    border-color: var(--white);
+    color: var(--white);
+    font-size: 1.5rem;
+}
+.btn.filter:hover,
+.btn.filter:focus {
+    color: var(--gray-3);
+    background: var(--white);
+}
+
+.filter-control {
+    display: grid;
+    place-content: center;
+    line-height:1;
 }
 
 .btn, .feedback {
@@ -205,10 +228,12 @@ p, a, .btn {
     position: absolute;
     top: 155%;
     left:0;
+    white-space: nowrap;
     border-radius: .5rem;
     filter: drop-shadow(0 2px 3px rgba(0,0,0,.6));
     transition: opacity 250ms;
     opacity:0;
+    z-index:0;
 }
 
 .feedback::before {
@@ -220,11 +245,18 @@ p, a, .btn {
     border-bottom: 1rem solid var(--gray-1);
     position: absolute;
     bottom: 99%;
+    left: 10%;
 }
 
 /* Navbar */
 .nav-list {
     display: flex;
+    justify-content:center;
+}
+@media screen and (min-width: 768px) {
+    .nav-list {
+        justify-content: flex-start;
+    }
 }
 
 .nav-link {
@@ -245,11 +277,14 @@ a:not(.btn)::after {
     bottom:0;
     left:0;
     right: 0;
-    border-bottom: 1px solid var(--green-3);
     transform-origin: left;
     transform: scale3d(0,0,0);
     backface-visibility: hidden;
     transition: transform 80ms ease;
+}
+
+a:not(.nav-link)::after {
+    border-bottom: 1px solid var(--green-3);
 }
 
 .nav-link::after {
@@ -573,6 +608,24 @@ h4 {
 
 
 /* States & Utilities*/
+@media screen and (min-width: 1200px) {
+    .d-mobile {
+        display: none;
+    }
+}
+
+.d-desktop {
+    display: none;
+}
+@media screen and (min-width: 1200px) {
+    .d-desktop {
+        display: block;
+    }
+}
+
+.d-desktop {}
+
+
 .has-shadow-txt {
     text-shadow: 0 2px 4px rgba(0,0,0,0.6);
 }

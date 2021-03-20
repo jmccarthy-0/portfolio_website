@@ -2,20 +2,21 @@
 
 const matrix = document.getElementById('matrix');
 const sliders = document.querySelectorAll('input[type="range"]');
+const btn = document.getElementById('playBtn');
 
 // Animate Filter
 let i = 1;
 function animate() {
     matrix.setAttribute('values', i);
-    i++;
+    if (btn.getAttribute('data-playing') === "true") {
+        i++;
+    }
     window.requestAnimationFrame(animate);
 }
 
-// if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-//     animate();
-// }
-
-animate();
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    animate();
+}
 
 
 sliders.forEach(slider => {
@@ -43,7 +44,18 @@ function map(val, minCurrent, maxCurrent, minTarget, maxTarget) {
 
 
 
-const btn = document.getElementById('playBtn');
-btn.addEventListener('click', function() {
 
+btn.addEventListener('click', function() {
+    if (this.getAttribute('data-playing') === "true") {
+        this.setAttribute('data-playing', "false");
+        swapIcon();
+    } else {
+        this.setAttribute('data-playing', "true");
+        swapIcon();
+    }
 });
+
+function swapIcon() {
+    document.querySelector('.play').classList.toggle('is-hidden');
+    document.querySelector('.pause').classList.toggle('is-hidden');
+}
