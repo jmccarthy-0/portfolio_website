@@ -1,16 +1,17 @@
 /* Variables */
 :root {
-    --gray-1: hsl(88, 1%, 84%);
-        --gray-1-faded: hsl(88, 1%, 51%);
-    --gray-2: hsl(88, 3%, 21%);
-    --gray-3: hsl(88, 16%, 5%);
-    --green-1: hsl(134,4%,39%);
-    --green-2: hsl(134,11%,23%);
+    --gray-1: hsl(88 1% 84%);
+        --gray-1-faded: hsl(88 1% 51%);
+    --gray-2: hsl(88 3% 21%);
+    --gray-3: hsl(88 16% 5%);
+    --green-1: hsl(134 4% 39%);
+    --green-2: hsl(134 15% 36%);
+    --green-3: hsl(134 11% 23%);
 
-    --brown-1: hsl(25, 41%, 90%);
-    --brown-2: hsl(25, 41%, 85%);
-    --brown-3: hsl(35,21%,54%);
-    --white: hsl(0, 0%, 100%);
+    --brown-1: hsl(25 41% 90%);
+    --brown-2: hsl(25 41% 85%);
+    --brown-3: hsl(35 21% 54%);
+    --white: hsl(0 0% 100%);
 
     --p-sides: 1rem;
     --p-sides-xl: 4rem;
@@ -151,7 +152,7 @@ h3 {
     line-height: 1.15;
 }
 
-p, a {
+p, a, .btn {
     font-size: 1rem;
 }
 
@@ -177,13 +178,14 @@ p, a {
     background: none;
     text-decoration: none;
     cursor: pointer;
-    color: var(--green-2);
+    color: var(--green-3);
     border: 1px solid var(--green-2);
     transition: background 90ms ease-out;
 }
 
 .btn:hover {
-    background: black;
+    background: var(--green-2);
+    color: #fff;
 }
 
 .btn, .feedback {
@@ -191,7 +193,7 @@ p, a {
 }
 
 .feedback {
-    background: green;
+    background: var(--gray-1);
     display: inline-block;
     position: absolute;
     top: 155%;
@@ -208,10 +210,9 @@ p, a {
     height:0;
     border-left: .75rem solid transparent;
     border-right: .75rem solid transparent;
-    border-bottom: 1rem solid green;
+    border-bottom: 1rem solid var(--gray-1);
     position: absolute;
     bottom: 99%;
-    /* border-radius: .5rem; */
 }
 
 /* Navbar */
@@ -333,7 +334,7 @@ input {
         top:-5vh;
         left: -5vw;
         transform: translateX(-5vw);
-        width: 110vw;
+        width: 115vw;
         height: 110vh;
     }
 }
@@ -463,10 +464,6 @@ input {
     margin-bottom: 1.5rem;
 }
 
-.showcase-content > a {
-    text-decoration: none;
-    color: var(--gray-2);
-}
 
 h4 {
     color: var(--gray-1-faded);
