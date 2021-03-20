@@ -33,15 +33,15 @@
     </header>
     <main style="text-align: center">
         <ul class="contact-list">
-            <li>
+            <li class="d-mobile">
                 <a href="mailto:mccarthysound@gmail.com">Email</a>
             </li>
-            <li>
-                <span id="address">Email</span>
+            <li class="d-desktop">
+                <span id="address">mccarthysound@gmail.com</span>
                 <div class="btn-wrapper">
-                    <button id="clipBtn" class="btn">Copy Email</button>
+                    <button id="clipBtn" class="btn">Copy</button>
                     <div id="clipSuccess" class="feedback">
-                        <p>Copied!</p>
+                        <p>Copied to clipboard</p>
                     </div>
                     <div id="clipFail" class="feedback">
                         <p>:( Something went wrong</p>
@@ -69,15 +69,27 @@
 
         clipBtn.addEventListener('click', () => {
              navigator.clipboard.writeText(address).then(()=>{
-                 let feedback = document.getElementById('clipSuccess');
-                 feedback.style.opacity = 1;
-                 setTimeout(() => {
-                     feedback.style.opacity = 0;
-                 }, 2500);
-             }, ()=>{
-
+                 showFeedback('clipSuccess');
+             }, ()=> {
+                 showFeedback('clipFail');
              });
         });
+
+        function showFeedback(feedbackId) {
+            let feedback = document.getElementById(feedbackId);
+            feedback.style.zIndex = 2;
+            feedback.style.opacity = 1;
+
+            let timeout = new Promise(resolve => {
+                setTimeout(() => {
+                    feedback.style.opacity = 0;
+                    resolve('Success');
+                }, 2500);
+            });
+            timeout.then(() => {
+                setTimeout(()=> feedback.style.zIndex = 0, 250);
+            });
+        }
     </script>
 </body>
 </html>
