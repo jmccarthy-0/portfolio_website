@@ -69,7 +69,6 @@ nav {
 }
 @media screen and (min-width:768px) {
     nav {
-        position: sticky;
         top:0;
         bottom: auto;
     }
@@ -80,7 +79,7 @@ header {
 }
 @media screen and (min-width:1200px) {
     header{
-        padding: 8rem 0 2rem;
+        padding: 12rem 0 2rem;
     }
 }
 
@@ -169,6 +168,24 @@ p, a, .btn {
 .content-wrapper {
     display: grid;
 }
+
+@media screen and (min-width: 1200px) {
+    .landing-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .landing-wrapper > header {
+        flex:0;
+    }
+
+    .landing-wrapper > main {
+        flex: 1;
+        display:grid;
+        place-content: center end;
+    }
+}
+
 
 
 /* Modules */

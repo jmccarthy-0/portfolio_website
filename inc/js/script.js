@@ -18,6 +18,12 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     animate();
 }
 
+if (window.matchMedia('(max-width: 1199px)').matches) {
+
+    applySliderValue('matrix02', '0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .75 0 0 0 0', 'values')
+    applySliderValue('turb', .01, 'baseFrequency')
+}
+
 
 sliders.forEach(slider => {
     slider.addEventListener('input', function() {
