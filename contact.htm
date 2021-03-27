@@ -83,7 +83,7 @@
             let timeout = new Promise(resolve => {
                 setTimeout(() => {
                     feedback.style.opacity = 0;
-                    resolve('Success');
+                    resolve();
                 }, 2500);
             });
             timeout.then(() => {

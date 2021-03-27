@@ -32,15 +32,15 @@
     </nav>
 
     <div class="landing-wrapper" style="height: 100vh">
-    <header>
-        <div class="header-content">
-            <h1 class="has-shadow-txt">Joe McCarthy</h1>
-            <h2 class="txt-white has-shadow-txt">Front End Developer & Web Designer</h2>
-        </div>
-    </header>
+        <header>
+            <div class="header-content">
+                <h1 class="has-shadow-txt">Joe McCarthy</h1>
+                <h2 class="txt-white has-shadow-txt">Front End Developer & Web Designer</h2>
+            </div>
+        </header>
 
-    <main>
-        <div>
+        <main>
+
             <h3 class="sr-only">Background Filter Controls</h3>
             <form>
                 <div class="slider-wrapper">
@@ -50,56 +50,74 @@
 
                 <button type="button" id="playBtn" class="filter btn" data-playing="true">
                     <div class="filter-control play is-hidden">
-                        <span>&#x23F5;</span>
+                        <svg viewBox="0 0 789 753" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+                            <g transform="matrix(1,0,0,1,-246.085,-243.703)">
+                                <g transform="matrix(1.23838e-16,2.02244,-1.96627,1.20399e-16,1614.48,-176.603)">
+                                    <path d="M383.596,317.621C385.492,313.537 389.501,310.937 393.901,310.937C398.301,310.937 402.31,313.537 404.206,317.621C437.629,389.609 542.56,615.614 571.99,679.002C573.667,682.614 573.425,686.857 571.35,690.242C569.274,693.627 565.656,695.68 561.765,695.68C498.868,695.68 289.026,695.68 226.073,695.68C222.175,695.68 218.549,693.623 216.469,690.231C214.39,686.839 214.147,682.587 215.827,678.969C245.279,615.534 350.179,389.597 383.596,317.621Z" />
+                                </g>
+                            </g>
+                        </svg>
+
                         <span class="sr-only">play</span>
                     </div>
                     <div class="filter-control pause">
-                        <span>&#x23F8;</span>
+                        <svg viewBox="0 0 758 724" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+                            <g transform="matrix(1,0,0,1,-246.085,-259.586)">
+                                <g>
+                                    <g transform="matrix(1.178,0,0,1,-71.4892,-40.1048)">
+                                        <path d="M514.612,329.004C514.612,313.102 503.652,300.191 490.152,300.191L294.473,300.191C280.973,300.191 270.013,313.102 270.013,329.004L270.013,994.058C270.013,1009.96 280.973,1022.87 294.473,1022.87L490.152,1022.87C503.652,1022.87 514.612,1009.96 514.612,994.058L514.612,329.004Z" />
+                                    </g>
+                                    <g transform="matrix(1.178,0,0,1,397.203,-40.1048)">
+                                        <path d="M514.612,331.886C514.612,314.393 502.556,300.191 487.706,300.191L296.919,300.191C282.069,300.191 270.013,314.393 270.013,331.886L270.013,991.176C270.013,1008.67 282.069,1022.87 296.919,1022.87L487.706,1022.87C502.556,1022.87 514.612,1008.67 514.612,991.176L514.612,331.886Z" />
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
                         <span class="pause sr-only is-hidden">pause</span>
                     </div>
                 </button>
             </form>
-        </div>
 
-        <svg class="bg-filter">
-            <filter id="filter" style="width:100vw;margin-left:-50px">
-                <feTurbulence type="turbulence"
-                              baseFrequency="0.005"
-                              numOctaves="4"
-                              seed="1"
-                              stitchTiles="stitch"
-                              id="turb"
-                              result="turb" />
-                <!-- <feGaussianBlur in="turb"
-                                stdDeviation="1"
-                                result="blur" /> -->
-                <feColorMatrix in="turb"
-                               type="hueRotate"
-                               values="0"
-                               id="matrix"
-                               result="matrix"/>
-                <feColorMatrix in="matrix"
-                               type="matrix"
-                               values="0 0 0 0 0
-                                       0 0 0 0 0
-                                       0 0 0 0 0
-                                       .3 0 0 0 0"
-                                id="matrix02"
-                                result="matrix02"/>
-                <feDisplacementMap in="SourceGraphic"
-                                   in2="matrix02"
-                                   scale="100" />
-            </filter>
-        </svg>
 
-        <div class="tree-wrapper">
-            <picture>
-                <source srcset="img/tree_default.jpg" media="(min-width:768px)">
-                <source srcset="img/tree_mobile.jpg">
-                <img class="bg-tree" src="img/tree_default.jpg">
-            </picture>
-        </div>
-    </main>
+            <svg class="bg-filter">
+                <filter id="filter" style="width:100vw;margin-left:-50px">
+                    <feTurbulence type="turbulence"
+                                  baseFrequency="0.005"
+                                  numOctaves="4"
+                                  seed="1"
+                                  stitchTiles="stitch"
+                                  id="turb"
+                                  result="turb" />
+                    <!-- <feGaussianBlur in="turb"
+                                    stdDeviation="1"
+                                    result="blur" /> -->
+                    <feColorMatrix in="turb"
+                                   type="hueRotate"
+                                   values="0"
+                                   id="matrix"
+                                   result="matrix"/>
+                    <feColorMatrix in="matrix"
+                                   type="matrix"
+                                   values="0 0 0 0 0
+                                           0 0 0 0 0
+                                           0 0 0 0 0
+                                           .3 0 0 0 0"
+                                    id="matrix02"
+                                    result="matrix02"/>
+                    <feDisplacementMap in="SourceGraphic"
+                                       in2="matrix02"
+                                       scale="100" />
+                </filter>
+            </svg>
+
+            <div class="tree-wrapper">
+                <picture>
+                    <source srcset="img/tree_default.jpg" media="(min-width:768px)">
+                    <source srcset="img/tree_mobile.jpg">
+                    <img class="bg-tree" src="img/tree_default.jpg">
+                </picture>
+            </div>
+        </main>
     </div>
     <script src="inc/js/script.js" type="text/javascript"></script>
 </body>
