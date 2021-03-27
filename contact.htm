@@ -28,68 +28,46 @@
             </li>
         </ul>
     </nav>
-    <header>
+    <header class="bg-crow">
         <h1 class="header-content has-shadow-txt">Contact</h1>
     </header>
     <main style="text-align: center">
-        <ul class="contact-list">
-            <li class="d-mobile">
-                <a href="mailto:mccarthysound@gmail.com">Email</a>
-            </li>
-            <li class="d-desktop">
-                <span id="address">mccarthysound@gmail.com</span>
-                <div class="btn-wrapper">
-                    <button id="clipBtn" class="btn">Copy</button>
-                    <div id="clipSuccess" class="feedback">
-                        <p>Copied to clipboard</p>
+        <section>
+            <ul class="contact-list">
+                <li class="d-mobile">
+                    <a href="mailto:mccarthysound@gmail.com">Email</a>
+                </li>
+                <li class="d-desktop">
+                    <span id="address">mccarthysound@gmail.com</span>
+                    <div class="btn-wrapper">
+                        <button id="clipBtn" class="btn">Copy</button>
+                        <div id="clipSuccess" class="feedback">
+                            <p>Copied to clipboard</p>
+                        </div>
+                        <div id="clipFail" class="feedback">
+                            <p>:( Something went wrong</p>
+                        </div>
                     </div>
-                    <div id="clipFail" class="feedback">
-                        <p>:( Something went wrong</p>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <a href="https://www.instagram.com/j.mccarthyart/" target="_blank">Instagram</a>
-            </li>
-            <li>
-                <a href="https://github.com/jmccarthy-0/" target="_blank">GitHub</a>
-            </li>
-            <li>
-                <a href="https://codepen.io/jmccar" target="_blank">CodePen</a>
-            </li>
-            <li>
-                <a href="https://www.linkedin.com/in/joe-mccarthy-58139984" target="_blank">LinkedIn</a>
-            </li>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/j.mccarthyart/" target="_blank">Instagram</a>
+                </li>
+                <li>
+                    <a href="https://github.com/jmccarthy-0/" target="_blank">GitHub</a>
+                </li>
+                <li>
+                    <a href="https://codepen.io/jmccar" target="_blank">CodePen</a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/joe-mccarthy-58139984" target="_blank">LinkedIn</a>
+                </li>
+                <li>
+                    <a href="https://vimeo.com/joemccarthy" target="_blank">Vimeo</a>
+                </li>
+            </ul>
+        </section>
     </main>
 
-    <script type="text/javascript">
-        "use strict";
-        const address = document.getElementById('address').textContent;
-        const clipBtn = document.getElementById('clipBtn');
-
-        clipBtn.addEventListener('click', () => {
-             navigator.clipboard.writeText(address).then(()=>{
-                 showFeedback('clipSuccess');
-             }, ()=> {
-                 showFeedback('clipFail');
-             });
-        });
-
-        function showFeedback(feedbackId) {
-            let feedback = document.getElementById(feedbackId);
-            feedback.style.zIndex = 2;
-            feedback.style.opacity = 1;
-
-            let timeout = new Promise(resolve => {
-                setTimeout(() => {
-                    feedback.style.opacity = 0;
-                    resolve();
-                }, 2500);
-            });
-            timeout.then(() => {
-                setTimeout(()=> feedback.style.zIndex = 0, 250);
-            });
-        }
-    </script>
+    <script type="text/javascript" src="inc/js/contact_script.js"> </script>
 </body>
 </html>

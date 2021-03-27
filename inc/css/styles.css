@@ -227,6 +227,7 @@ p, a, .btn {
     border-color: var(--white);
     color: var(--white);
     font-size: 1.5rem;
+    padding: 1rem 2rem;
 }
 .btn.filter:hover,
 .btn.filter:focus {
@@ -374,6 +375,10 @@ input {
     height: 1.5rem;
 }
 
+.filter-form {
+    text-align: right;
+}
+
 /* Background Images */
 .bg-filter {
     width:0;
@@ -424,13 +429,22 @@ input {
 }
 
 .bg-deer {
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../../img/deer.jpg') left bottom / 60%  repeat;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../../img/deer.webp') left bottom / 60%  repeat;
 }
 @media screen and (min-width: 768px) {
     .bg-deer {
         background-size: auto;
     }
 }
+
+.bg-crow {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../../img/crow.webp') left center / cover repeat;
+}
+@media screen and (min-width: 768px) {
+    /* .bg-turkey {
+        background-size:  / contain;
+    }
+} */
 
 
 /* Contact */
