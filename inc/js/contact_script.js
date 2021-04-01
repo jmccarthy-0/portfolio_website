@@ -1,6 +1,6 @@
 "use strict";
 
-const address = document.getElementById('address').textContent;
+const address ="email@joemccarthy.dev";
 const clipBtn = document.getElementById('clipBtn');
 
 clipBtn.addEventListener('click', () => {
